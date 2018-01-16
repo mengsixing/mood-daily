@@ -18,7 +18,7 @@ class Index extends React.Component {
           this.props.history.push('/login');
         }
     }
-  
+
     renderContent(pageText) {
       var routerComponent=<Home></Home>;
       switch(this.state.selectedTab){
