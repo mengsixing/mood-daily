@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Slider, WingBlank, WhiteSpace, Button, Toast, NavBar, Modal, TextareaItem } from 'antd-mobile';
 import axios from 'axios';
 import './Home.css'
-class App extends Component {
+class App extends PureComponent {
   constructor() {
     super();
     this.state = {
@@ -18,30 +18,30 @@ class App extends Component {
       familyDes: '',
       societyDes: ''
     };
-    
+
   }
 
-  componentWillMount(){
-  //获取今天的数据
-  var userId = localStorage.getItem('userId');
-  var _this = this;
-  axios.get('/getTodayData', { params: { userId } }).then(function (response) {
-    if (response.data.length > 0) {
-      _this.setState({
-        healthScore:Number.parseInt( response.data[0].healthScore,10),
-        studyScore:Number.parseInt(response.data[0].studyScore,10),
-        familyScore:Number.parseInt(response.data[0].familyScore,10),
-        relationshipScore:Number.parseInt(response.data[0].relationshipScore,10),
-        societyScorce:Number.parseInt(response.data[0].societyScorce,10),
-        datetime:response.data[0].datetime
-      });
-    }
-  });
+  componentWillMount() {
+    //获取今天的数据
+    var userId = localStorage.getItem('userId');
+    var _this = this;
+    axios.get('/getTodayData', { params: { userId } }).then(function (response) {
+      if (response.data.length > 0) {
+        _this.setState({
+          healthScore: Number.parseInt(response.data[0].healthScore, 10),
+          studyScore: Number.parseInt(response.data[0].studyScore, 10),
+          familyScore: Number.parseInt(response.data[0].familyScore, 10),
+          relationshipScore: Number.parseInt(response.data[0].relationshipScore, 10),
+          societyScorce: Number.parseInt(response.data[0].societyScorce, 10),
+          datetime: response.data[0].datetime
+        });
+      }
+    });
   }
 
   changeLog(logType, noop) {
     switch (logType) {
-      default:      
+      default:
       case 'health':
         this.setState({
           healthScore: noop
