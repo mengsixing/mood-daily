@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import { NavBar, WhiteSpace, WingBlank } from 'antd-mobile';
 import axios from 'axios';
@@ -58,13 +58,16 @@ var initOption = {
 }
 
 
-class App extends PureComponent {
+class App extends Component {
     constructor() {
         super();
         this.getChartData();
         this.state = {
             option: initOption
         }
+    }
+    componentWillReceiveProps(){
+        this.getChartData();
     }
 
     getChartData() {

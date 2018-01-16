@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { Slider, WingBlank, WhiteSpace, Button, Toast, NavBar, Modal, TextareaItem } from 'antd-mobile';
 import axios from 'axios';
 import './Home.css'
-class App extends PureComponent {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,7 +18,6 @@ class App extends PureComponent {
       familyDes: '',
       societyDes: ''
     };
-
   }
 
   componentWillMount() {
@@ -38,7 +37,6 @@ class App extends PureComponent {
       }
     });
   }
-
   changeLog(logType, noop) {
     switch (logType) {
       default:
