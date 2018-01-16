@@ -28,11 +28,11 @@ class App extends Component {
   axios.get('/getTodayData', { params: { userId } }).then(function (response) {
     if (response.data.length > 0) {
       _this.setState({
-        healthScore:Number.parseInt( response.data[0].healthScore),
-        studyScore:Number.parseInt(response.data[0].studyScore),
-        familyScore:Number.parseInt(response.data[0].familyScore),
-        relationshipScore:Number.parseInt(response.data[0].relationshipScore),
-        societyScorce:Number.parseInt(response.data[0].societyScorce),
+        healthScore:Number.parseInt( response.data[0].healthScore,10),
+        studyScore:Number.parseInt(response.data[0].studyScore,10),
+        familyScore:Number.parseInt(response.data[0].familyScore,10),
+        relationshipScore:Number.parseInt(response.data[0].relationshipScore,10),
+        societyScorce:Number.parseInt(response.data[0].societyScorce,10),
         datetime:response.data[0].datetime
       });
     }
@@ -41,6 +41,7 @@ class App extends Component {
 
   changeLog(logType, noop) {
     switch (logType) {
+      default:      
       case 'health':
         this.setState({
           healthScore: noop
@@ -86,7 +87,6 @@ class App extends Component {
       console.log(_this.refs);
     }, 500);
     Modal.alert('添加描述', <TextareaItem
-      ref="modalTextarea"
       rows={5}
       placeholder="我的想法是..."
       onChange={this.changeModalDesc.bind(this)}
