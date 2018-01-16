@@ -1,6 +1,10 @@
 # 心情日记
 
-一个简单的日记记录站点，根据分类实现数据统计。
+一个简单的日记记录站点，根据分类记录实现统计报表。理解从前端->后端->数据库的整体思路，适合初学者参考！ 
+
+- 前端使用react+react-router,echarts
+- 后端使用koa搭建web服务器
+- 数据库使用mongodb
 
 
 [演示地址](http://yinhengli.com:8081)  
@@ -10,6 +14,7 @@
 - react-router
 - axios 
 - echarts
+- koa
 - mongodb
 - antd-mobile 
   
