@@ -15,7 +15,7 @@ class MyRouter extends React.Component{
       <Router>
         <div>
           <Route path="/" exact component={Index}/>
-          <Route path="/login" exact component={Login}/>
+          <Route path="/login" component={Login}/>
           <Route path="/register" exact component={Register}/>
       </div>
       </Router>

@@ -108,6 +108,13 @@ class App extends Component {
         var userId = localStorage.getItem('userId');
         var _this = this;
         var date = params.name;
+        _this.setState({
+            healthDes:'',
+            studyDes:'',
+            relationshipDes:'',
+            familyDes:'',
+            societyDes:''
+        });
         axios.get('/getAnydayData', { params: { userId, date } }).then(function (response) {
             if (response.data.length > 0) {
                 _this.setState({

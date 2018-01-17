@@ -1,5 +1,5 @@
 import React from 'react'
-import { TabBar } from 'antd-mobile'
+import { TabBar, Toast } from 'antd-mobile'
 import Home from '../home/Home.jsx'
 import My from '../my/My.jsx'
 import dailyselect from './daily-select.svg'
@@ -13,9 +13,15 @@ class Index extends React.Component {
       hidden: false,
       fullScreen: true,
     };
+
+  }
+  componentWillMount() {
+    var _this = this;
     //判断是否登录
     if (!localStorage.getItem('userId')) {
-      this.props.history.push('/login');
+      Toast.fail('请先登录', 2, function () {
+        _this.props.history.push('/login');
+      })
     }
   }
   render() {
