@@ -10,6 +10,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-watch": "^5.0.0",
+    "immutable": "^3.8.2",
     "koa": "^2.4.1",
     "koa-simple-router": "^0.2.0",
     "koa-static": "^4.0.2",
@@ -29,7 +30,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "nodeserver": "gulp&& node ./nodeserver/app.js",
-    "publish":"react-app-rewired build &&gulp &&sh publish.sh "
+    "publish": "react-app-rewired build &&gulp &&sh publish.sh "
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",
