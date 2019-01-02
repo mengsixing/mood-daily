@@ -1,5 +1,7 @@
 # 心情日记
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yhlben/mood-daily.svg)](https://greenkeeper.io/)
+
 一个简单的日记记录站点，根据分类记录实现统计报表。理解从前端->后端->数据库的整体思路，适合初学者参考！ 
 
 - 前端使用react+react-router,echarts
